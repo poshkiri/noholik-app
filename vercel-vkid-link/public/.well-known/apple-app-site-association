@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["7B33KX2HJL.com.maxim.GestureApp"],
+        "components": [
+          {
+            "/": "/vk_id_redirect*"
+          }
+        ]
+      }
+    ]
+  }
+}

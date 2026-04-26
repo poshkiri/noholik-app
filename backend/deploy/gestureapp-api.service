@@ -1,0 +1,18 @@
+[Unit]
+Description=GestureApp API
+After=network.target
+
+[Service]
+Type=simple
+User=gestureapp
+Group=gestureapp
+WorkingDirectory=/opt/gesture-api/backend
+EnvironmentFile=/opt/gesture-api/backend/.env
+ExecStart=/usr/bin/node /opt/gesture-api/backend/server.js
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
