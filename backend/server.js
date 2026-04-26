@@ -582,8 +582,10 @@ app.post(
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/health', (_req, res) => res.json({ ok: true, ts: Date.now() }));
 
-// ── Local dev server ──────────────────────────────────────────────────────────
-if (process.env.NODE_ENV !== 'production') {
+// ── Standalone server entrypoint ──────────────────────────────────────────────
+// Start listening only when this file is launched directly.
+// When imported by a serverless platform, export the app without binding a port.
+if (require.main === module) {
     app.listen(PORT, () => console.log(`GestureApp API listening on :${PORT}`));
 }
 
